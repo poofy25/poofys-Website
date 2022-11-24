@@ -1,5 +1,5 @@
 .Header{
-  z-index: 1000;
+  z-index: 100;
   justify-content: space-between;
     display: flex;
     flex-direction: row;
@@ -83,6 +83,7 @@
    
 }
 .HamburgerButton{
+    z-index: 10;
     position: relative;
     width: 60px;
     cursor: pointer;
@@ -93,8 +94,62 @@
     align-items: center;
     margin-right: 4vw;
 }
+.phoneDropdown{
+    
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    right: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,0.95);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid white;
+    margin: 0;
+    transition: 1s;
+    opacity: 0;
+}
+.MenuButtons{
+    position: relative;
+    top: 60px;
+    width: 40w;
+    height: auto;
+    padding: 5vw;
+   
 
-
+}
+.phoneMenuButton{
+    display: block;
+    text-align: end;
+    margin: auto;
+    margin-right: 2.5vw;
+    margin-top: clamp(30px,4vw,35px);
+    margin-bottom: clamp(30px,4vw,35px);
+    width: auto;
+    right: -12.5vw;
+    height: 10vw;
+    font-size: clamp(15px,9vw,40px);
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    
+    
+}
+.phoneMenuButton > a {
+    text-decoration: none;
+    color: rgba(255, 255, 255,0.8);
+    
+    
+}
+.phoneMenuButton > a:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255,1);
+    
+}
+.phoneMenuButton > a:hover::before {
+   content: '> ';
+   
+}
 @media screen and (max-width:650px){
 .HeaderButton{
     display: none;
