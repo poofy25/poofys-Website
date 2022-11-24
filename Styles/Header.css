@@ -49,21 +49,34 @@
 
 }
 
-
-.Home-Button:hover{
-    color: rgb(253, 71, 60);
+.HeaderButton .HeaderButtonTXT{
+    text-decoration: none;
+    color: inherit;
+    transition: 0.25s ease-in-out;
 }
 
-.Gallery-Button:hover{
+.HeaderButton:hover .HeaderButtonTXT{
     color: rgb(253, 71, 60);
 }
-
-.About-Button:hover{
-    color: rgb(253, 71, 60);
+.HeaderButton::after{
+    content: '';
+    bottom: -5px;
+    height: 2px;
+    width: 0%;
+    left:10%;
+    position: relative;
+    display: block;
+    background-color: red;
+    transition: 0.5s ease-in-out;
 }
-
-.Contact-Button:hover{
-    color: rgb(253, 71, 60);
+.HeaderButton:hover::after{
+    content: '';
+    position: relative;
+    bottom: -5px;
+    height: 2px;
+    width: 80%;
+    left:10%;
+    background-color: red;
 }
 .HeaderButton{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -78,6 +91,7 @@
    text-decoration: none;
    font-weight: bolder;
 }
+
 .HambugerIMG{
     width: 100%;
    
@@ -98,9 +112,9 @@
     
     z-index: 9;
     position: absolute;
-    top: 0;
+    top: 61px;
     right: -50vw;
-    width: 50vw;
+    width: 65vw;
     height: 100vh;
     background-color: rgba(0, 0, 0,0.95);
     backdrop-filter: blur(10px);
@@ -111,7 +125,7 @@
 }
 .MenuButtons{
     position: relative;
-    top: 60px;
+   
     width: 40w;
     height: auto;
     padding: 5vw;
@@ -123,33 +137,57 @@
     text-align: end;
     margin: auto;
     margin-right: 2.5vw;
-    margin-top: clamp(30px,4vw,35px);
-    margin-bottom: clamp(30px,4vw,35px);
-    width: auto;
+   
+    width: 100%;
+    
     right: -12.5vw;
-    height: 10vw;
+    height: 15vw;
     font-size: clamp(15px,9vw,40px);
     background-color: transparent;
     border: none;
     padding: 0;
-    
-    
+    padding: 10px;
+    padding-right: 25px;
+    border-top: 1px solid rgba(255, 255, 255,0.25);
+   
 }
 .phoneMenuButton > a {
     text-decoration: none;
-    color: rgba(255, 255, 255,0.8);
-    
-    
-}
-.phoneMenuButton > a:hover {
-    text-decoration: none;
     color: rgba(255, 255, 255,1);
     
+    
 }
-.phoneMenuButton > a:hover::before {
-   content: '> ';
+.phoneMenuButton:hover {
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    
+}
+.phoneMenuButton:hover .ButtonTXT {
+    
+    color: rgb(253, 71, 60);
+    
+}
+.phoneMenuButton:hover .ButtonTXT::before {
+    content: '> ';
+    color: rgb(253, 71, 60);
+}
+/*ACTIVE PAGE BUTTONS*/
+.ActiveButton{
    
+    color: rgb(253, 71, 60);
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 4px;
 }
+.ActiveButton .ButtonTXT{
+   
+    color: rgb(253, 71, 60);
+    
+}
+.ActiveHeaderButton{
+    color: rgb(253, 71, 60);
+}
+/*MEDIA QUERIES*/
 @media screen and (max-width:650px){
 .HeaderButton{
     display: none;
@@ -161,3 +199,8 @@
     justify-content: end;
 }
 }
+@media screen and (min-width:651px){
+    .phoneDropdown{
+        display: none;
+    }
+    }
